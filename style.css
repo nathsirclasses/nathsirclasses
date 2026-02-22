@@ -8,28 +8,24 @@
 
 body {
   line-height: 1.6;
-  background-color: #f9f9f9;
+  background-color: #001F3F; /* navy blue */
+  color: white;
 }
 
 /* Header */
 header {
-  background-color: #1E40AF;
+  background-color: #001F3F;
   color: white;
   padding: 10px 0;
 }
 
 header .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* center nav */
   align-items: center;
   max-width: 1100px;
   margin: auto;
   padding: 0 20px;
-}
-
-/* Logo */
-header .logo {
-  height: 60px; /* increased for better visibility */
 }
 
 /* Navigation */
@@ -39,7 +35,7 @@ nav ul {
 }
 
 nav ul li {
-  margin-left: 20px;
+  margin: 0 15px;
 }
 
 nav ul li a {
@@ -50,70 +46,194 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #FBBF24; /* yellow hover effect */
+  color: #FBBF24;
 }
 
-/* Hero section */
+/* Hero Section */
 .hero {
-  background: #3B82F6;
+  background-color: #001F3F;
   color: white;
-  padding: 100px 20px;
+  padding: 180px 20px 100px;
   text-align: center;
+  position: relative;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+/* Logo above title */
+.hero-logo {
+  display: block;
+  margin: 0 auto 30px auto;
+  height: 120px; /* adjust size */
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-}
-
-.hero .btn {
-  display: inline-block;
-  background: white;
-  color: #3B82F6;
-  padding: 12px 25px;
-  text-decoration: none;
-  border-radius: 5px;
+/* Main Hero Title */
+.hero-content h1 {
+  font-size: 8rem; /* doubled */
   font-weight: bold;
-  transition: background 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  position: relative;
+  line-height: 1.2;
+  margin-bottom: 60px;
 }
 
-.hero .btn:hover {
-  background: #FBBF24; /* yellow hover */
+/* Underline with erased portion for subtitle */
+.hero-content .main-title {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-content .main-title::after {
+  content: "";
+  display: block;
+  height: 12px;
+  width: 100%;
+  background: linear-gradient(to right, #FBBF24 70%, transparent 30%);
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  z-index: 1;
+}
+
+/* Subtitle aligned with underline */
+.hero-content .subtitle {
+  position: absolute;
+  bottom: -18px; /* align with underline */
+  left: 10px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #FBBF24;
+  z-index: 2;
+}
+
+.hero-content .subtitle::after {
+  content: "";
+  display: inline-block;
+  height: 12px;
+  width: 20%;
+  background: linear-gradient(to right, #FBBF24 100%, transparent 0%);
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+/* Buttons inline */
+.hero-buttons {
+  margin-top: 40px;
+}
+
+.hero .btn, .hero .register-btn {
+  display: inline-block;
+  padding: 16px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin: 15px 10px 0 0;
+  transition: all 0.3s ease;
+  border: 2px solid white;
+  background: #ffffff; /* both buttons white */
+  color: #001F3F;
+}
+
+.hero .btn:hover, .hero .register-btn:hover {
+  background: #FBBF24;
   color: white;
 }
 
-/* Faculty / About Section */
+/* Faculty Section */
 .faculty {
   text-align: center;
   padding: 50px 20px;
-  background: #f3f4f6; /* light gray background */
-  transition: background 0.3s ease;
-}
-
-.faculty:hover {
-  background: #e2e8f0; /* slightly darker on hover for effect */
+  background-color: #001F3F;
+  color: white;
 }
 
 .faculty h2 {
   font-size: 2.5rem;
-  color: #1E40AF;
+  color: #FBBF24;
   margin-bottom: 20px;
 }
 
 .faculty-photo {
-  width: 200px;           /* adjust size as needed */
-  border-radius: 50%;     /* makes it circular */
+  width: 200px;
+  border-radius: 50%;
   margin-top: 20px;
-  border: 3px solid #1E40AF;
+  border: 3px solid #FBBF24;
 }
 
 .faculty p {
   margin-top: 15px;
   font-size: 1.1rem;
-  color: #333;
+  color: #ffffff;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #001F3F; /* navy blue gallery */
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  color: #FBBF24;
+  margin-bottom: 30px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Footer */
+footer {
+  background: #001F3F;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 6rem;
+  }
+
+  .hero-content .subtitle {
+    font-size: 2rem;
+  }
+
+  .hero .btn, .hero .register-btn {
+    padding: 14px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-content .subtitle {
+    position: static;
+    display: block;
+    margin-top: 5px;
+    font-size: 1.5rem;
+  }
+
+  .hero .btn, .hero .register-btn {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .faculty-photo {
+    width: 150px;
+  }
 }
