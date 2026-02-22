@@ -1,3 +1,4 @@
+/* Reset and base styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,6 +11,7 @@ body {
   background-color: #f9f9f9;
 }
 
+/* Header */
 header {
   background-color: #1E40AF;
   color: white;
@@ -25,10 +27,12 @@ header .container {
   padding: 0 20px;
 }
 
+/* Logo */
 header .logo {
-  height: 50px;
+  height: 60px; /* increased for better visibility */
 }
 
+/* Navigation */
 nav ul {
   display: flex;
   list-style: none;
@@ -41,8 +45,15 @@ nav ul li {
 nav ul li a {
   color: white;
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
+nav ul li a:hover {
+  color: #FBBF24; /* yellow hover effect */
+}
+
+/* Hero section */
 .hero {
   background: #3B82F6;
   color: white;
@@ -50,21 +61,59 @@ nav ul li a {
   text-align: center;
 }
 
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
 .hero .btn {
   display: inline-block;
   background: white;
   color: #3B82F6;
-  padding: 10px 20px;
-  margin-top: 20px;
+  padding: 12px 25px;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-footer {
-  background-color: #111827;
+.hero .btn:hover {
+  background: #FBBF24; /* yellow hover */
   color: white;
+}
+
+/* Faculty / About Section */
+.faculty {
   text-align: center;
-  padding: 20px 0;
-  margin-top: 50px;
+  padding: 50px 20px;
+  background: #f3f4f6; /* light gray background */
+  transition: background 0.3s ease;
+}
+
+.faculty:hover {
+  background: #e2e8f0; /* slightly darker on hover for effect */
+}
+
+.faculty h2 {
+  font-size: 2.5rem;
+  color: #1E40AF;
+  margin-bottom: 20px;
+}
+
+.faculty-photo {
+  width: 200px;           /* adjust size as needed */
+  border-radius: 50%;     /* makes it circular */
+  margin-top: 20px;
+  border: 3px solid #1E40AF;
+}
+
+.faculty p {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #333;
 }
